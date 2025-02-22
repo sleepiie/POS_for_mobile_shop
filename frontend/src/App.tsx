@@ -1,17 +1,23 @@
-import { Button } from "@/components/ui/button"
-import React from "react"
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SidebarComponent from './components/ui/Sidebar';
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
-  const [count, setCount] = React.useState(0)
-
   return (
-    <div className="min-h-screen bg-white grid place-items-center mx-auto py-8">
-      <div className="text-blue-900 text-2xl font-bold flex flex-col items-center space-y-4">
-        <h1>Vite + React + TS + Tailwind + shadcn/ui</h1>
-        <Button onClick={() => setCount(count + 1)}>Count up ({count})</Button>
+    <Router>
+      <div className="min-h-screen bg-white flex">
+        <SidebarComponent />
+        <div className="flex-1 p-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
       </div>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

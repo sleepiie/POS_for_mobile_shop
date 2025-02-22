@@ -4,6 +4,8 @@ go 1.22.0
 
 toolchain go1.24.0
 
+// replace github.com/wailsapp/wails/v2 v2.10 => /Users/peerapartnamnuch/go/pkg/mod
+
 require github.com/wailsapp/wails/v2 v2.10.0
 
 require (
@@ -34,5 +36,3 @@ require (
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
 )
-
-// replace github.com/wailsapp/wails/v2 v2.10 => /Users/peerapartnamnuch/go/pkg/mod
